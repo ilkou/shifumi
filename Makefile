@@ -6,7 +6,7 @@
 #    By: oouklich <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/14 01:58:23 by oouklich          #+#    #+#              #
-#    Updated: 2020/05/29 13:28:43 by oouklich         ###   ########.fr        #
+#    Updated: 2020/05/29 14:16:33 by oouklich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ else
 $(info $(shell uname) detected)
 MLX_DIR = minilibx_linux
 MLX_FLAGS = -I $(MLX_DIR) -L $(MLX_DIR) -lmlx -lXext -lX11 -lm -lbsd
-SDL2_FLAGS = -I $(INC_DIR)/SDL2 -lSDL2 -lSDL2_mixer
+SDL2_FLAGS = 
 endif
 
 all: $(NAME)

@@ -6,7 +6,7 @@
 /*   By: oouklich <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 12:55:56 by oouklich          #+#    #+#             */
-/*   Updated: 2020/05/29 13:13:18 by oouklich         ###   ########.fr       */
+/*   Updated: 2020/05/29 14:14:23 by oouklich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ static int	print_usage(char *prog) {
 static void	init(t_game *game) {
 	initScore(game);
 	initGraphics(game);
+#ifdef __APPLE__
 	initSounds(game);
+#endif
 	initNetworking(game);
 }
 

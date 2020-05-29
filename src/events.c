@@ -6,7 +6,7 @@
 /*   By: oouklich <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/27 17:01:11 by oouklich          #+#    #+#             */
-/*   Updated: 2020/05/29 14:21:02 by oouklich         ###   ########.fr       */
+/*   Updated: 2020/05/29 14:23:00 by oouklich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,15 @@ void	handleFrameStart(int x,int y, t_game *g) {
 	if (!g->is_ready && inButton(&g->scene.new_game, x, y))
 		printf("\n => En attente d'un adversaire... ");
 	else if (g->is_ready && inButton(&g->scene.new_game, x, y)) {
+#ifdef __APPLE__
 		mx_play(g->click_effect, 0);
+#endif
 		g->frame = FRAME_PLAY;
 	}
 	else if (inButton(&g->scene.quit, x, y)) {
+#ifdef __APPLE__
 		mx_play(g->click_effect, 0);
+#endif
 		closeGame(g);
 	}
 	fflush(stdout);
@@ -39,19 +43,25 @@ void	handleFramePlay(int x,int y, t_game *g) {
 	if (g->is_end == 1)
 		return ;
 	if (g->is_selecting == S_NONE && inButton(&g->scene.my_rock[ON_SELECT], x, y)) {
+#ifdef __APPLE__
 		mx_play(g->click_effect, 0);
+#endif
 		write(g->fd[ECRITURE], "rock", 4);
 		displayComponent(g, &g->scene.my_rock[ON_SELECT]);
 		g->is_selecting = S_ROCK;
 	}
 	if (g->is_selecting == S_NONE && inButton(&g->scene.my_paper[ON_SELECT], x, y)) {
+#ifdef __APPLE__
 		mx_play(g->click_effect, 0);
+#endif
 		write(g->fd[ECRITURE], "paper", 5);
 		displayComponent(g, &g->scene.my_paper[ON_SELECT]);
 		g->is_selecting = S_PAPER;
 	}
 	if (g->is_selecting == S_NONE && inButton(&g->scene.my_scissors[ON_SELECT], x, y)) {
+#ifdef __APPLE__
 		mx_play(g->click_effect, 0);
+#endif
 		write(g->fd[ECRITURE], "scissors", 8);
 		displayComponent(g, &g->scene.my_scissors[ON_SELECT]);
 		g->is_selecting = S_SCISSORS;

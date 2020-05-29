@@ -6,7 +6,7 @@
 /*   By: oouklich <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/27 17:12:43 by oouklich          #+#    #+#             */
-/*   Updated: 2020/05/29 13:13:00 by oouklich         ###   ########.fr       */
+/*   Updated: 2020/05/29 14:20:38 by oouklich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	initNetworking(t_game *g) {
 }
 
 void	initSounds(t_game *g) {
+#ifdef __APPLE__
 	if (SDL_Init(SDL_INIT_AUDIO) < 0 || !mx_init()) {
 		mx_error(MX_ERROR_init_code, MX_ERROR_init);
 		exit(EXIT_FAILURE);
@@ -76,4 +77,5 @@ void	initSounds(t_game *g) {
 	g->bg_music = mx_push_music("sounds/wish.mp3", MX_MUSIC);
 	g->click_effect = mx_push_music("sounds/button.wav", MX_EFFECT);
 	mx_play(g->bg_music, -1);
+#endif
 }

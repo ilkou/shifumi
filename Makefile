@@ -6,16 +6,18 @@
 #    By: oouklich <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/14 01:58:23 by oouklich          #+#    #+#              #
-#    Updated: 2020/05/29 14:16:33 by oouklich         ###   ########.fr        #
+#    Updated: 2020/05/29 14:20:04 by oouklich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = shifumi
 
 SRCS = main.c init.c image.c component.c quit.c events.c socketClient.c load_components.c display.c
+ifeq ($(shell uname), Darwin)
 SRCS += mx/mixer.c\
        mx/mixer_events.c\
        mx/mixer_tools.c
+endif
 SRCS += libft/ft_strjoin.c\
 	libft/ft_itoa.c
 SRC_DIR = src

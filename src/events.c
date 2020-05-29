@@ -6,7 +6,7 @@
 /*   By: oouklich <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/27 17:01:11 by oouklich          #+#    #+#             */
-/*   Updated: 2020/05/29 13:25:27 by oouklich         ###   ########.fr       */
+/*   Updated: 2020/05/29 14:21:02 by oouklich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,12 @@ int	keyHandler(int key, t_game *g) {
 	//printf("Key in : %d\n",key);
 	if (key == K_ESC)
 		closeGame(g);
+#ifdef __APPLE__
 	if (key == K_P)
 		mx_resume_music();
 	if (key == K_S)
 		mx_pause_music();
+#endif
 	if (key == K_R)
 		reset(g);
 	return (0);

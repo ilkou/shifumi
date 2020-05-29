@@ -6,7 +6,7 @@
 #    By: oouklich <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/14 01:58:23 by oouklich          #+#    #+#              #
-#    Updated: 2020/05/29 14:20:04 by oouklich         ###   ########.fr        #
+#    Updated: 2020/05/29 15:43:44 by oouklich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ ifeq ($(shell uname), Darwin)
 endif
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	gcc -o $@ -c $< -I $(INC_DIR) -I $(INC_DIR)/SDL2
+	gcc -o $@ -c $< -I $(MLX_DIR) -I $(INC_DIR) -I $(INC_DIR)/SDL2
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)

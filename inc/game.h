@@ -6,7 +6,7 @@
 /*   By: oouklich <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 16:31:47 by oouklich          #+#    #+#             */
-/*   Updated: 2020/05/29 13:03:12 by oouklich         ###   ########.fr       */
+/*   Updated: 2020/05/29 19:58:48 by oouklich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,8 @@ typedef struct		s_scene
 	t_component	bg;
 	t_component	logo;
 	t_component	rights;
-	t_component	new_game;
+	t_component	random;
+	t_component	solo;
 	t_component	quit;
 	t_component	my_empty;
 	t_component	my_rock[3];

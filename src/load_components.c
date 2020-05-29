@@ -6,7 +6,7 @@
 /*   By: oouklich <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 00:32:21 by oouklich          #+#    #+#             */
-/*   Updated: 2020/05/29 02:58:21 by oouklich         ###   ########.fr       */
+/*   Updated: 2020/05/29 20:18:41 by oouklich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	load_components(t_game *g) {
 	scene->bg = new_component(new_image(g->mlx, "img/bg.xpm"), 0, 0);
 	scene->logo = new_component(new_image(g->mlx, "img/logo.xpm"), 405, 60);
 	scene->rights = new_component(new_image(g->mlx, "img/rights.xpm"), 385, 633);
-	scene->new_game = new_component(new_image(g->mlx, "img/new_game.xpm"), 20, 480);
+	scene->random = new_component(new_image(g->mlx, "img/random.xpm"), 20, 403);
+	scene->solo = new_component(new_image(g->mlx, "img/solo.xpm"), 20, 480);
 	scene->quit = new_component(new_image(g->mlx, "img/quit.xpm"), 20, 557);
 	scene->my_empty = new_component(new_image(g->mlx, "img/empty.xpm"), 240, 77);
 	scene->adv_empty = new_component(new_image(g->mlx, "img/empty.xpm"), 240, 350);

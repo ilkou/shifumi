@@ -6,7 +6,7 @@
 /*   By: oouklich <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/27 17:12:43 by oouklich          #+#    #+#             */
-/*   Updated: 2020/05/29 14:20:38 by oouklich         ###   ########.fr       */
+/*   Updated: 2020/05/29 20:09:39 by oouklich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	initNetworking(t_game *g) {
 		exitStatus(" => établir la connexion avec le serveur... KO \nserver unreachable\n", NULL);
 	if (first_info == NULL)
 		exitStatus(" => établir la connexion avec le serveur... KO \nserver unreachable\n", NULL);
-	addressin=(struct sockaddr_in *)first_info->ai_addr;
+	addressin = (struct sockaddr_in *)first_info->ai_addr;
 	if (connect(g->sock,(struct sockaddr *)addressin,
 				(socklen_t) sizeof(struct sockaddr_in)) < 0)
 		exitStatus(" => établir la connexion avec le serveur... KO \n", "connect ");

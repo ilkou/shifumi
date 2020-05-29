@@ -6,7 +6,7 @@
 /*   By: oouklich <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/27 17:01:11 by oouklich          #+#    #+#             */
-/*   Updated: 2020/05/29 14:23:00 by oouklich         ###   ########.fr       */
+/*   Updated: 2020/05/29 20:11:42 by oouklich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,14 @@ int	inButton(t_component *button, int x, int y) {
 }
 
 void	handleFrameStart(int x,int y, t_game *g) {
-	if (!g->is_ready && inButton(&g->scene.new_game, x, y))
+	if (!g->is_ready && inButton(&g->scene.random, x, y))
 		printf("\n => En attente d'un adversaire... ");
-	else if (g->is_ready && inButton(&g->scene.new_game, x, y)) {
+	else if (!g->is_ready && inButton(&g->scene.solo, x, y)) {
+		write(g->fd[ECRITURE], "bot", 3);
+		g->is_ready = 1;
+		g->frame = FRAME_PLAY;
+	}
+	else if (g->is_ready && inButton(&g->scene.random, x, y)) {
 #ifdef __APPLE__
 		mx_play(g->click_effect, 0);
 #endif

@@ -6,7 +6,7 @@
 /*   By: oouklich <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/28 09:16:30 by oouklich          #+#    #+#             */
-/*   Updated: 2020/05/29 03:43:27 by oouklich         ###   ########.fr       */
+/*   Updated: 2020/05/29 20:02:02 by oouklich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,21 +73,21 @@ void	*socketThread(t_game *g) {
 				close(g->fd[LECTURE]);
 				break ;
 			}
+			else if (!strcmp(buffer, "bot"))
+				write_server(g->sock, "bot");
 			else if (!strcmp(buffer, "paper"))
 				write_server(g->sock, "paper");
 			else if (!strcmp(buffer, "rock"))
 				write_server(g->sock, "rock");
 			else if (!strcmp(buffer, "scissors"))
 				write_server(g->sock, "scissors");
-			puts(buffer);
 		}
 		if (FD_ISSET(g->sock, &rdfs)) {
 			int n = read_server(g->sock, buffer);
 			/* server down */
-			if (n == 0)
-			{
+			if (n == 0) {
 				printf("Server disconnected !\n");
-				break;
+				closeGame(g);
 			}
 			if (!strcmp(buffer, "waiting"))
 				printf(" => En attente d'un adversaire... ");
@@ -125,7 +125,6 @@ int read_server(int sock, char *buffer)
 		perror("recv()");
 
 	buffer[n] = 0;
-
 	return n;
 }
 

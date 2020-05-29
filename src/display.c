@@ -6,7 +6,7 @@
 /*   By: oouklich <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 03:39:29 by oouklich          #+#    #+#             */
-/*   Updated: 2020/05/29 03:48:44 by oouklich         ###   ########.fr       */
+/*   Updated: 2020/05/29 19:59:38 by oouklich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ void	displayStart(t_game *g) {
 	displayComponent(g, &scene->bg);
 	displayComponent(g, &scene->logo);
 	displayComponent(g, &scene->rights);
-	displayComponent(g, &scene->new_game);
+	displayComponent(g, &scene->random);
+	displayComponent(g, &scene->solo);
 	displayComponent(g, &scene->quit);
 }
 

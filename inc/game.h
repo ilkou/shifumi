@@ -6,7 +6,7 @@
 /*   By: oouklich <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 16:31:47 by oouklich          #+#    #+#             */
-/*   Updated: 2020/05/29 19:58:48 by oouklich         ###   ########.fr       */
+/*   Updated: 2020/05/30 10:09:23 by oouklich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ typedef struct		s_frame
 typedef struct		s_scene
 {
 	t_component	bg;
+	t_component	bg2;
 	t_component	logo;
 	t_component	rights;
 	t_component	random;

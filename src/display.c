@@ -6,7 +6,7 @@
 /*   By: oouklich <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 03:39:29 by oouklich          #+#    #+#             */
-/*   Updated: 2020/05/29 23:39:29 by oouklich         ###   ########.fr       */
+/*   Updated: 2020/05/30 10:11:24 by oouklich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	displayResult(t_game *g, int rslt, int adv) {
 void	displayStart(t_game *g) {
 	t_scene *scene = &g->scene;
 
-	displayComponent(g, &scene->bg);
+	displayComponent(g, &scene->bg2);
 	displayComponent(g, &scene->logo);
 	displayComponent(g, &scene->rights);
 	displayComponent(g, &scene->random);
@@ -59,7 +59,7 @@ void	displayStart(t_game *g) {
 void	displayPlay(t_game *g) {
 	t_scene *scene = &g->scene;
 
-displayComponent(g, &scene->bg);
+	displayComponent(g, &scene->bg);
 	displayComponent(g, &scene->my_empty);
 	displayComponent(g, &scene->adv_empty);
 	mlx_string_put(g->mlx, g->win, 100, 140, 0xFFFFFF, ft_strjoin("Moi: ", ft_itoa(g->my_score), 1));
